@@ -1,0 +1,37 @@
+<h4> Pesquise os Sines da Sua Região </h4>
+<input type="text" [(ngModel)]= munici>
+<button align="center" class="btn btn-primary" (click)='pesquisarSines()'> Pesquisar </button>
+<br>
+<br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Municipio</th>
+            <th>Bairro</th>
+            <th>Nome</th>
+            <th>Entidade Conveniada</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>CEP</th>
+            <th>CodPosto</th>
+            <th>UF</th>
+            <th>lat</th>
+            <th>long</th>
+        </tr>
+    </thead >
+    <tbody *ngFor="let s of sines">
+        <tr>
+            <td>{{s.municipio}}</td>
+            <td>{{s.bairro}}</td>
+            <td>{{s.nome}}</td>
+            <td>{{s.entidadeConveniada}}</td>
+            <td>{{s.endereco}}</td>
+            <td>{{s.telefone}}</td>
+            <td>{{s.cep}}</td>
+            <td>{{s.codPosto}}</td>
+            <td>{{s.uf}}</td>
+            <td>{{s.lat}}</td>
+            <td>{{s.long}}</td>
+        </tr>
+    </tbody>
+</table>
