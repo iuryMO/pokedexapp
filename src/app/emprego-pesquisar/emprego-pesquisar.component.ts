@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-emprego-pesquisar',
-  templateUrl: './emprego-pesquisar.component.html',
-  styleUrls: ['./emprego-pesquisar.component.css']
+  templateUrl: './emprego-pesquisar.component.html'/*,
+  styleUrls: ['./emprego-pesquisar.component.css']*/
 })
 
 @Injectable()
