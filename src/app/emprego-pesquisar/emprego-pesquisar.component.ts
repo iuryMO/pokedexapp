@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-emprego-pesquisar',
-  templateUrl: './emprego-pesquisar.component.html'/*,
-  styleUrls: ['./emprego-pesquisar.component.css']*/
+  templateUrl: './emprego-pesquisar.component.html',
+  styleUrls: ['./estilos.css']
 })
 
 @Injectable()
@@ -31,4 +31,17 @@ export class EmpregoPesquisarComponent implements OnInit {
       sines => this.sines = sines,
       error => this.errorMessage = <any>error);
   }
+
+  /*initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }*/
+
 }

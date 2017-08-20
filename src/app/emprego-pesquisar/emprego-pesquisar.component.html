@@ -1,37 +1,66 @@
-<h4> Pesquise os Sines da Sua Região </h4>
-<input type="text" [(ngModel)]= munici>
-<button align="center" class="btn btn-primary" (click)='pesquisarSines()'> Pesquisar </button>
-<br>
-<br>
-<table class="table table-bordered container">
-    <thead>
-        <tr>
-            <th>Municipio</th>
-            <th>Bairro</th>
-            <th>Nome</th>
-            <th>Entidade Conveniada</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
-            <th>CEP</th>
-            <th>CodPosto</th>
-            <th>UF</th>
-            <th>lat</th>
-            <th>long</th>
-        </tr>
-    </thead >
-    <tbody *ngFor="let s of sines">
-        <tr>
-            <td>{{s.municipio}}</td>
-            <td>{{s.bairro}}</td>
-            <td>{{s.nome}}</td>
-            <td>{{s.entidadeConveniada}}</td>
-            <td>{{s.endereco}}</td>
-            <td>{{s.telefone}}</td>
-            <td>{{s.cep}}</td>
-            <td>{{s.codPosto}}</td>
-            <td>{{s.uf}}</td>
-            <td>{{s.lat}}</td>
-            <td>{{s.long}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="col-md-12">
+    <div class="form-container col-md-12">
+        <h4> Pesquise os Sines da Sua Região </h4>
+    </div>
+
+    <div class="form-container col-md-5">
+        <input type="text" [(ngModel)]=m unici>
+        <button align="center" class="btn btn-primary" (click)='pesquisarSines()'> Pesquisar </button>
+    </div>
+    <div class="form-container col-md-12">
+        <div class="form-container col-md-7">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Bairro</th>
+                        <th>Nome</th>
+                        <th>Entidade Conveniada</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>CEP</th>
+                        <th>CodPosto</th>
+                        <th>UF</th>
+                        <th>lat</th>
+                        <th>long</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let s of sines">
+                    <tr>
+                        <td>{{s.municipio}}</td>
+                        <td>{{s.bairro}}</td>
+                        <td>{{s.nome}}</td>
+                        <td>{{s.entidadeConveniada}}</td>
+                        <td>{{s.endereco}}</td>
+                        <td>{{s.telefone}}</td>
+                        <td>{{s.cep}}</td>
+                        <td>{{s.codPosto}}</td>
+                        <td>{{s.uf}}</td>
+                        <td>{{s.lat}}</td>
+                        <td>{{s.long}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-container col-md-5">
+            <div style="height: 400px;width: 100%;background: grey;" id="map"></div>
+        </div>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXVTwoFIWoMEjK3GjJYNdSx9xC226hIlw&callback=initMap&sensor=false">
+
+        </script>
+        <script>
+            function initMap() {
+                var uluru = { lat: -25.363, lng: 131.044 };
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+    </div>
+</div>
